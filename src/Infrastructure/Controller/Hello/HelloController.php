@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Controller\Hello;
 
-use App\Application\Bus\QueryBus;
+use App\Application\Bus\Query\QueryBus;
 use App\Application\Hello\HelloQuery;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

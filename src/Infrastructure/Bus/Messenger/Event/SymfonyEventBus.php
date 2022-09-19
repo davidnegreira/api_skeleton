@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Infrastructure\Bus\Messenger;
+namespace App\Infrastructure\Bus\Messenger\Event;
 
-use App\Application\Bus\EventBus;
+use App\Application\Bus\Event\EventBus;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\HandleTrait;
 use Symfony\Component\Messenger\MessageBusInterface;
@@ -27,9 +27,9 @@ final class SymfonyEventBus implements EventBus
         }
     }
 
-    public function notifyAll(array $domainEvents): void
+    public function notifyAll(array $events): void
     {
-        array_walk($domainEvents,fn ($event) => $this->notify($event));
+        array_walk($events,fn ($event) => $this->notify($event));
     }
 }
 
